@@ -1,7 +1,11 @@
 <?php
 
-Event::listen('Larabook.Registration.Events.UserRegistered', function($event){
-    //send email to user
+Event::listen('Larabook.Registration.Events.UserRegistered', function($event)
+{
+    Mail::send('emails.welcome', [], function($message) use ($event)
+    {
+        $message->to($event->user->email, 'Larabook')->subject('Welcome to Larabook');
+    });
 });
 
 Route::get('/', [

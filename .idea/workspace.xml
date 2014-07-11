@@ -50,10 +50,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="routes.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="24" selection-start="110" selection-end="110" vertical-scroll-proportion="0.06716418" vertical-offset="0" max-vertical-offset="670">
+            <state line="3" column="24" selection-start="110" selection-end="110" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="12" selection-start="118" selection-end="118" vertical-scroll-proportion="0.2170418" vertical-offset="0" max-vertical-offset="622">
               <folding />
             </state>
           </provider>
@@ -103,6 +112,7 @@
         <option value="$PROJECT_DIR$/app/Larabook/Users/User.php" />
         <option value="$PROJECT_DIR$/app/Larabook/Registration/RegisterUserCommandHandler.php" />
         <option value="$PROJECT_DIR$/app/routes.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -596,16 +606,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/app/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="647">
+        <state line="3" column="24" selection-start="110" selection-end="110" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes.php">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="24" selection-start="110" selection-end="110" vertical-scroll-proportion="0.06716418" vertical-offset="0" max-vertical-offset="670">
+        <state line="9" column="12" selection-start="118" selection-end="118" vertical-scroll-proportion="0.2170418" vertical-offset="0" max-vertical-offset="622">
           <folding />
         </state>
       </provider>

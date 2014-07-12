@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-3 col-lg-offset-4">
         <h1>Register</h1>
 
         @include('layouts.partials.errors')

@@ -41,16 +41,21 @@ class RegistrationController extends BaseController {
     public function store()
     {
 
+        // Validate the users input with validate function in RegistrationForm
         $this->registrationForm->validate(Input::all());
 
+        // Extract the form data into individual variables.
         extract(Input::only('username', 'email', 'password'));
 
-        $user = $this->execute(
-            new RegisterUserCommand($username, $email, $password)
-        );
+        // Execute function from CommandBus class.
+        $user = $this->execute(new RegisterUserCommand($username, $email, $password));
 
+        // Log the newly registered user in.
         Auth::login($user);
 
+        Flash::success('Thanks for registering!');
+
+        // Return home.
         return Redirect::home();
 
 

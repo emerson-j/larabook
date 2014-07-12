@@ -53,6 +53,7 @@ class RegistrationController extends BaseController {
         // Log the newly registered user in.
         Auth::login($user);
 
+        // Store flash message
         Flash::success('Thanks for registering!');
 
         // Return home.

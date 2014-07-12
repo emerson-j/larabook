@@ -47,12 +47,15 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
      */
     public static function register($username, $email, $password)
     {
+        // Create a new user using current class (User).
         $user = new static(
             compact('username', 'email', 'password')
         );
 
+        // Raise a new UserRegistered event.
         $user->raise(new UserRegistered($user));
 
+        // Return the user object.
         return $user;
     }
 

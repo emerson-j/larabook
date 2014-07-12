@@ -2,6 +2,7 @@
 
 Event::listen('Larabook.Registration.Events.UserRegistered', function($event)
 {
+    // Email the new user with the email from the UserRegistered event
     Mail::send('emails.welcome', [], function($message) use ($event)
     {
         $message->to($event->user->email, $event->user->email)

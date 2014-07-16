@@ -1,15 +1,29 @@
 <?php
 
+use Larabook\Core\CommandBus;
+use Larabook\Statuses\PublishStatusCommand;
+use Larabook\Statuses\StatusRepository;
+
 class StatusesController extends \BaseController {
 
-	/**
+    use CommandBus;
+
+    protected $statusRepository;
+
+    function __construct(StatusRepository $statusRepository)
+    {
+        $this->statusRepository = $statusRepository;
+    }
+
+    /**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
 	public function index()
 	{
-		return View::make('statuses.index');
+        $statuses = $this->statusRepository->getAllForUser(Auth::user());
+		return View::make('statuses.index', compact('statuses'));
 	}
 
 
@@ -31,7 +45,12 @@ class StatusesController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		$this->execute(
+            new PublishStatusCommand(Input::get('body'), Auth::user()->id)
+        );
+        Flash::message('Your status has been posted.');
+        return Redirect::refresh();
+
 	}
 
 

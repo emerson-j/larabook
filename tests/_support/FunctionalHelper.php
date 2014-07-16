@@ -21,10 +21,35 @@ class FunctionalHelper extends \Codeception\Module
 
     /**
      * Create a test account
+     *
+     * @param array $overrides
      */
     public function haveAnAccount($overrides = [])
     {
-        $user = Factory::create('Larabook\Users\User', $overrides);
+        return $this->have('Larabook\Users\User', $overrides);
     }
 
+
+    /**
+     * @param $model
+     * @param array $overrides
+     */
+    public function have($model, $overrides = [])
+    {
+        return Factory::create($model, $overrides);
+    }
+
+
+    /**
+     * Post a test status
+     *
+     * @param array $overrides
+     */
+    public function postAStatus($body)
+    {
+        $I = $this->getModule('Laravel4');
+
+        $I->fillField('Status:', $body);
+        $I->click('Post Status');
+    }
 }

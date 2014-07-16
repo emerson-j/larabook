@@ -12,7 +12,7 @@
     </div>
 
     <div class="form-group">
-        {{ Form::submit('Post Status', ['btn btn-primary']) }}
+        {{ Form::submit('Post Status', ['class' => 'btn btn-primary']) }}
     </div>
 
     {{ Form::close() }}

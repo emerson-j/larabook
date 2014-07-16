@@ -403,7 +403,7 @@ class FunctionalTester extends \Codeception\Actor
      * @param array $overrides
      * @see \Codeception\Module\FunctionalHelper::postAStatus()
      */
-    public function postAStatus($overrides = null) {
+    public function postAStatus($body) {
         return $this->scenario->runStep(new \Codeception\Step\Action('postAStatus', func_get_args()));
     }
 

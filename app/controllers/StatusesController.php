@@ -1,6 +1,7 @@
 <?php
 
 use Larabook\Core\CommandBus;
+use Larabook\Forms\PublishStatusForm;
 use Larabook\Statuses\PublishStatusCommand;
 use Larabook\Statuses\StatusRepository;
 
@@ -10,9 +11,13 @@ class StatusesController extends \BaseController {
 
     protected $statusRepository;
 
-    function __construct(StatusRepository $statusRepository)
+    protected $publishStatusForm;
+
+    function __construct(StatusRepository $statusRepository, PublishStatusForm $publishStatusForm)
     {
+    		$this->publishStatusForm = $publishStatusForm;
         $this->statusRepository = $statusRepository;
+
     }
 
     /**
@@ -45,60 +50,14 @@ class StatusesController extends \BaseController {
 	 */
 	public function store()
 	{
+		$this->publishStatusForm->validate(Input::only('body'));
+
 		$this->execute(
             new PublishStatusCommand(Input::get('body'), Auth::user()->id)
         );
         Flash::message('Your status has been posted.');
-        return Redirect::refresh();
+        return Redirect::back();
 
-	}
-
-
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		//
-	}
-
-
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
-
-
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
-
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
 	}
 
 

@@ -4,7 +4,7 @@ use Larabook\Forms\RegistrationForm;
 use Larabook\Registration\RegisterUserCommand;
 use Larabook\Core\CommandBus;
 
-class RegistrationController extends BaseController {
+class RegistrationController extends \BaseController {
 
     use CommandBus;
 

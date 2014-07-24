@@ -1,7 +1,5 @@
 <?php namespace Larabook\Users;
 
-use Illuminate\Support\Facades\Mail;
-
 class UserRepository {
 
     /**
@@ -14,4 +12,27 @@ class UserRepository {
     {
         return $user->save();
     }
-} 
+
+    /**
+     * @param int $amount
+     */
+    public function getPaginated($amount = 25)
+    {
+        return User::orderBy('username', 'asc')->paginate($amount);
+    }
+
+    /**
+     * Find a user by there username
+     * 
+     * @param  string $username
+     * @return mixed
+     */
+    public function findByUsername($username)
+    {
+        return User::with(['statuses' => function($query)
+        {   
+            $query->latest();
+        }])->whereUsername($username)->first();
+        
+    }
+}

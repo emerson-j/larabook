@@ -3,7 +3,7 @@
 use Larabook\Statuses\StatusRepository;
 use Laracasts\TestDummy\Factory as Dummy;
 
-class StatusRepoistoryTest extends \Codeception\TestCase\Test
+class StatusRepositoryTest extends \Codeception\TestCase\Test
 {
    /**
     * @var \IntegrationTester

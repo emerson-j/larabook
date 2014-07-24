@@ -5,7 +5,7 @@ use Larabook\Users\User;
 class StatusRepository {
 
     public function getAllForUser(User $user) {
-        return User::find($user->id)->statuses;
+        return $user->statuses()->with('user')->latest()->get();
     }
 
     /**
@@ -20,4 +20,4 @@ class StatusRepository {
                ->save($status);
     }
 
-} 
+}

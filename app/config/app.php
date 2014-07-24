@@ -13,7 +13,7 @@ return array(
 	|
 	*/
 
-	'debug' => true,
+	'debug' => false,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -123,8 +123,8 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
 		'Laracasts\Commander\CommanderServiceProvider',
-        'Laracasts\Validation\ValidationServiceProvider',
-        'Laracasts\Flash\FlashServiceProvider',
+    'Laracasts\Validation\ValidationServiceProvider',
+    'Laracasts\Flash\FlashServiceProvider',
 
 	),
 
